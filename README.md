@@ -219,7 +219,7 @@ MIT — use it, modify it, build on it.
 
 ## 👤 Author
 
-Built by **Eleven** — full-stack dev, KTM 390 Adventure rider, Insta360 X3 shooter.
+Built by **Uday** — full-stack dev
 
 - Learning system design by building ContentPilot
 - Documenting everything in Obsidian
@@ -234,4 +234,4 @@ The goal is to make this the go-to toolkit for developers who create.
 
 ---
 
-*Built with Claude Sonnet on claude.ai*
+
