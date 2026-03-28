@@ -16,6 +16,7 @@ TypeScript only protects at compile time. Runtime validation with Zod catches ba
 2. `ZodSchema.safeParse(body)` runs immediately
 3. If invalid → return 400 with structured error, stop
 4. If valid → `result.data` is typed and safe to use downstream
+5. [[request_validation_flow.svg]]
 
 ## Applied to ContentPilot
 Schema lives in `lib/schemas/generate.ts`:
@@ -38,10 +39,18 @@ Ignore now: transforms, async refinements, superRefine
 - Manual checks: zero deps, verbose, no type inference
 
 ## Interview questions
-1. Why server-side validation even if client validates?
-2. `parse` vs `safeParse` — when to use which?
-3. Where in the request lifecycle should validation run?
-4. Why 400 not 422 for validation errors?
+
+**Q: Why server-side validation even if the client validates?**
+Client is untrusted. Anyone can bypass frontend validation with cURL or Postman. Server-side is the actual security boundary — client check is only UX.
+
+**Q: `parse` vs `safeParse` — when to use which?**
+`parse` throws a ZodError on failure — use in scripts where exceptions are fine. `safeParse` returns `{ success, data | error }` and never throws — always use in API routes so you control the response.
+
+**Q: Where in the request lifecycle should validation run?**
+First, before everything. Before auth, before DB, before external APIs. Fail fast — don't waste compute on an invalid request.
+
+**Q: Why 400 not 422?**
+422 is more semantically precise but 400 is the de facto standard in REST APIs. Both are acceptable — what matters is consistency. ContentPilot uses 400.
 
 ---
 Related: [[Phase 2.1 - REST API Design]] [[Phase 2.3 - Authentication JWT]]
