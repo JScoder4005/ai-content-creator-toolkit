@@ -13,7 +13,7 @@ Every web app works this way. Understanding this is the foundation of all system
 
 ## How it works
 Browser types URL → sends HTTP request → server processes → sends back HTML → browser renders it.
-![[contentpilot_request_journ.svg]]
+![[contentpilot_request_journ.svg|682]]
 
 ## Applied to ContentPilot
 - Client = your browser opening contentpilot.com

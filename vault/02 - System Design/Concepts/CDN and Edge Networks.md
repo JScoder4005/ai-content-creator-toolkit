@@ -1,5 +1,6 @@
 ---
-tags: [concept]
+tags:
+  - concept
 created: 2026-03-27
 ---
 
@@ -19,7 +20,7 @@ Reduces latency dramatically. Instead of Bangalore to US
 3. When you visit from Bangalore, Mumbai edge serves you
 4. Static files (HTML, JS, CSS) are cached at the edge
 
-![[cdn_edge_network.svg]]
+![[cdn_edge_network.svg|644]]
 
 ## Applied to ContentPilot
 - Vercel CDN serves Next.js app from Mumbai edge
