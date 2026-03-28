@@ -1,5 +1,7 @@
 ---
-tags: [concept, phase-2]
+tags:
+  - concept
+  - phase-2
 created: 2026-03-28
 phase: 2
 ---
