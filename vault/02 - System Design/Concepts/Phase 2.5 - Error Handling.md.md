@@ -13,7 +13,7 @@ Inconsistent error handling leaks internal system details to attackers, breaks f
 
 ## How it works
 
-![[error_handling_contentpilot.svg]]
+![[error_handling_contentpilot.svg|682]]
 
 1. Error thrown anywhere in the route handler
 2. Central `handleError` catches and classifies it
